@@ -2,8 +2,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Product } from '@/types';
-import { client } from '@/lib/sanity';
+import { Product } from '@/app/types';
+import { client } from '@/sanity/lib/client';
 import ProductCard from './ProductCard';
 
 export default function ProductGrid() {
@@ -58,3 +58,4 @@ export default function ProductGrid() {
     </div>
   );
 }
+
