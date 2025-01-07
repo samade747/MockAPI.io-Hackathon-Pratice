@@ -1,7 +1,7 @@
 // src/components/ProductCard.tsx
 import Image from 'next/image';
-import { urlFor } from '@/lib/sanity';
-import { Product } from '@/types';
+import { urlFor } from '@/sanity/lib/image';
+import { Product } from '@/app/types';
 
 interface ProductCardProps {
   product: Product;

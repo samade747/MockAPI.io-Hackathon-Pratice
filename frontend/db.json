@@ -26,7 +26,7 @@
         "shipment_id": "unique identifier (UUID or Number)",
         "order_id": "string (reference to Sales Schema)",
         "tracking_number": "string",
-        "shipment_status": "string", // Example: "Pending", "In Transit", "Delivered"
+        "shipment_status": "string", 
         "estimated_delivery_date": "ISO 8601 timestamp",
         "carrier": {
           "carrier_name": "string",
@@ -56,7 +56,7 @@
 ],
     "sales": [
         {
-            "order_id": "string (unique identifier, required)", // UUID
+            "order_id": "string (unique identifier, required)", 
             "customer_id": "string (required)",
             "order_date": "ISO 8601 timestamp (auto-generated, required)",
             "total_price": "number (required, must be >= 0)",
