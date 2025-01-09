@@ -12,20 +12,22 @@ export default function ProductGrid() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const query = `*[_type == "product"] {
+      const query = `*[_type == "inventory"] {
         _id,
         product_id,
         product_name,
         description,
         price,
+        discountPercentage,
         tags,
         sizes,
         images,
         stock_quantity,
         category,
+        rating,
+        ratingCount,
         supplier
       }`;
-
       try {
         const data = await client.fetch<Product[]>(query);
         setProducts(data);
@@ -55,6 +57,11 @@ export default function ProductGrid() {
           <ProductCard key={product._id} product={product} />
         ))}
       </div>
+
+
+        
+
+
     </div>
   );
 }
