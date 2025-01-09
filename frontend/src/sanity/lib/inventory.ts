@@ -1,5 +1,5 @@
 // import { Rule } from '@sanity/types';
-import { SchemaType } from 'sanity';
+// import { SchemaType } from 'sanity';
 
 export default {
   name: 'product',
@@ -19,7 +19,8 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'array',
+      of: [{ type: 'string' }],
     },
     {
       name: 'price',
@@ -27,24 +28,26 @@ export default {
       type: 'number',
     },
     {
+      name: 'discountPercentage',
+      title: 'Discount Percentage',
+      type: 'number',
+    },
+    {
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      of: [
-        {
-          type: 'string',
-        },
-      ],
+      of: [{ type: 'string' }],
     },
     {
       name: 'sizes',
       title: 'Sizes',
+      type: 'number',
+    },
+    {
+      name: 'images',
+      title: 'Images',
       type: 'array',
-      of: [
-        {
-          type: 'string',
-        },
-      ],
+      of: [{ type: 'image' }],
     },
     {
       name: 'stock_quantity',
@@ -55,39 +58,32 @@ export default {
       name: 'category',
       title: 'Category',
       type: 'array',
-      of: [
-        {
-          type: 'string',
-        },
-      ],
+      of: [{ type: 'string' }],
+    },
+    {
+      name: 'rating',
+      title: 'Rating',
+      type: 'number',
+    },
+    {
+      name: 'raing',
+      title: 'Raing', // Assuming this is a typo or another rating-like value.
+      type: 'number',
     },
     {
       name: 'supplier',
       title: 'Supplier',
-      type: 'object',
-      fields: [
-        {
-          name: 'supplier_name',
-          title: 'Supplier Name',
-          type: 'string',
-        },
-        {
-          name: 'contact_number',
-          title: 'Contact Number',
-          type: 'string',
-        },
-      ],
+      type: 'array',
+      of: [{ type: 'string' }], // Adjust the type based on the supplier structure if more details are provided.
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'id',
+      title: 'ID',
+      type: 'string',
     },
   ],
 };
+
 
 
 // export default {
