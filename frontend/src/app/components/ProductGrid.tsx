@@ -12,7 +12,7 @@ export default function ProductGrid() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const query = `*[_type == "inventory"] {
+      const query = `*[_type == "product"] {
         _id,
         product_id,
         product_name,
