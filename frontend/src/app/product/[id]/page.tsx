@@ -6,7 +6,7 @@ import { Product } from '@/app/types';
 import { client } from '@/sanity/lib/client';
 
 export default function ProductPage() {
-  const {  product_id } = useParams(); // Get the product ID from the dynamic route
+  const { product_id } = useParams(); // Get the product ID from the dynamic route
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -14,7 +14,7 @@ export default function ProductPage() {
     if (!product_id) return;
 
     const fetchProduct = async () => {
-      const query = `*[_type == "product" && product_id == "${product_id}"] {
+      const query = `*[_type == "product" || product_id == "${product_id}"] {
         _id,
         product_id,
         product_name,
